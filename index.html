@@ -1,14 +1,51 @@
 <html>
 <head>
-	<title>First App By Kamal Sir</title>
+<title>Greeting App By Kamal Sir</title>
 </head>
 
+<style>
+	*{ font-size : 70px}
+	body{background-color : lightblue}
+</style>
+
 <body>
-	<h1>Welcome to JS MERN</h1>
-	<h2>Welcome to JS MERN</h2>
-	<h3>Welcome to JS MERN</h3>
-	<h4 style="color:red; font-size:40px;">Welcome to JS MERN</h4>
-	<h5 style="color:red;">Welcome to JS MERN</h5>
-	<h6 style="font-size:40px;">Welcome to JS MERN</h6>
+<center>
+	<h1>Greeting App</h1>
+	<form onsubmit = "onshow()">	
+		<input type = "text" placeholder = "Enter Name" id = name />
+
+		<br/><br/>
+		<input type = "submit">
+		<h2 id = "msg" />
+	</form>
+
+	<script>
+		function onshow(){
+			event.preventDefault()
+			let name = document.getElementById("name")
+			let d = new Date()
+			let hr = d.getHours()
+			
+			let n = name.value
+
+			if(n === ""){
+				alert("Please Enter your name.")
+				msg.innerHTML = ""
+				n.focus()
+				return	
+			}
+
+
+			let msg = document.getElementById("msg")
+			
+			if(hr<12)
+				msg.innerHTML = "Good Morning " +n;
+			else if(hr<16)
+				msg.innerHTML = "Good Afternoon " +n;
+			else
+				msg.innerHTML = "Good Evening " +n
+		}
+	</script>
+</center>
 </body>
 </html>
